@@ -42,7 +42,7 @@ h1 {
 }
 
 h2 {
-  color: #ffffff;
+  color: #000;
   font-size: 1rem;
 }
 
@@ -58,8 +58,16 @@ h5 {
 }
 
 p {
-  color: #777;
-  font-size: 16px;
+  color: #222;
+  font-size: 18px;
+  line-height: 28px;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+ul {
+  color: #222;
+  font-size: 18px;
   line-height: 28px;
   word-spacing: 1px;
   letter-spacing: 1px;

@@ -62,7 +62,7 @@ http://www.tooplate.com/view/2082-pure-mix
             <div class="row">
 
               <div class="brand">
-                <a href="index.html">Home</a>
+                <a href="index.html">YELP AND MUCH MORE</a>
               </div>
 
               <div class="navicon">
@@ -105,8 +105,8 @@ http://www.tooplate.com/view/2082-pure-mix
             	<div class="header-thumb">
               		 <h1 class="wow fadeIn" data-wow-delay="0.6s">About</h1>
 					 <h1 class="wow fadeIn" data-wow-delay="0.6s">Yelp Open Dataset</h1>
-              		 <h3 class="wow fadeInUp" data-wow-delay="0.8s">Exploratory Analysis on the Dataset</h3>
-					 <h3 class="wow fadeInUp" data-wow-delay="0.8s">Final Project, Part 1</h3>
+              		 <h2 class="wow fadeInUp" data-wow-delay="0.8s">Exploratory Analysis</h2>
+					 <h2 class="wow fadeInUp" data-wow-delay="0.8s">Final Project, Part 1</h2>
            		</div>
 			</div>
 
@@ -121,49 +121,334 @@ http://www.tooplate.com/view/2082-pure-mix
    <div class="container">
       <div class="row">
 
-         <div class="wow fadeInUp col-md-4 col-sm-5" data-wow-delay="1.3s">
+        <!--
+		<div class="wow fadeInUp col-md-4 col-sm-5" data-wow-delay="1.3s">
          	<img src="images/about-img1.jpg" class="img-responsive" alt="About">
          	<h1>About Pure Mix</h1>
 			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
 		</div>
+		-->
 
-		<div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="1.6s">
-			<h1>Lorem ipsum dolor sit amet</h1>
-			<p>Morbi mattis scelerisque nunc quis faucibus. Cras consectetur, nulla nec condimentum bibendum, est est accumsan ipsum, id vestibulum nulla odio vel massa. Duis pharetra augue ac bibendum eleifend. Curabitur id luctus lectus. Donec sem sem, egestas sit amet sagittis pellentesque, semper non libero.</p>
-			<blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</blockquote>
-			<img src="images/about-img.jpg" class="img-responsive" alt="About">
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+		<div class="wow fadeInUp col-md-15 col-sm-15" data-wow-delay="0.9s">
+			<h1>Introduction on Yelp Open Dataset</h1>
+			<p>The Yelp Open Dataset is a subset of Yelp's businesses, reviews, and user data for use in personal, educational, and academic purposes. </br>
+			The dataset is presented as JSON files, which contain 5,996,996 reviews, 
+			188,593 businesses, 280,992 pictures and so on. </br>
+			For detailed explanations and the download link for Yelp Open Dataset, 
+			please click <ins> <font color = "blue"> <a href="https://www.yelp.com/dataset/">here</a></ins></font>.  
+			
+			<br/>
+			<br/>
+			The dataset is partitioned into several parts, such as business.json, review.json, user.json, photo.json, etc.
+			</br>
+			Our research focus is on the business dataset (business.json) and the user dataset (user.json).
+			</p>
+		</div>
+		
+		<br/>
+		
+		<div class="wow fadeInUp col-md-15 col-sm-15" data-wow-delay="0.9s">
+			<h1>Accountability of the Dataset</h1>
+			<h2>Source: Where did this data come from?</h2>
+			<p>
+			This dataset was collected by Yelp, and is a subset of its businesses, reviews, and user data.
+			</p>
+			<br/>
+
+			<h2>Accessibility: Who has access to the dataset?</h2>
+			<p>
+			This dataset is publicly available, i.e., accessible for everyone. 
+			Anyone can download, view and use it as long as for personal, educational, and academic purposes. <br/>
+			The download link can be found in the aforementioned link.
+			</p>
 		</div>
 
-		<div class="clearfix"></div>
-
-		<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="0.4s">
-			<h1>Donec eu porta 1</h1>
-			<p>Duis id ultricies magna. Fusce placerat eu magna non euismod. Curabitur suscipit tristique massa, nec pretium tellus maximus nec. Pellentesque convallis viverra mauris quis sollicitudin. Praesent et libero in augue aliquam malesuada vitae ultricies neque. Donec rutrum diam sagittis diam viverra tincidunt.</p>
+		<br/>
+		
+		<div class="wow fadeInUp col-md-15 col-sm-15" data-wow-delay="0.9s">
+			<h1>Analysis on Business Dataset</h1>
+			<h2>Components of the Dataset</h2>
+			<p>
+			The dataset is named “yelp_academic_dataset_business.json”, which contains the following information:
+			<ul>
+			<li> business’s ID </li>
+			<li> business’s name </li>
+			<li> business’s neighborhood’s name </li>
+			<li> business’s full address, including street, city and state </li>
+			<li> business’s postal code </li>
+			<li> business’s latitude and longitude </li>
+			<li> business’s stars rating </li>
+			<li> business’s number of reviews </li>
+			<li> whether the business is open or closed </li>
+			<li> business’s attributes, e.g., whether it offers parking, etc. </li>
+			<li> business’s categories, e.g., “Mexican”, “Burgers”, etc. </li>
+			<li> business’s working hours </li>
+			</ul>
+			</p>
+			<br/>
+			
+			<h2>Inspection on Components</h2>
+			<p>
+			<ul>
+			
+			<li><b>Business ID</b></li>
+			<dd>
+			All of the values are non-empty. <br/>
+			For most of the ID, it is a string that contains 22 characters. <br/>
+			However, 
+			there are rows with an ID as “#NAME?”. We believe this is an error. Hence, those rows are removed. <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Business’s Name</b></li>
+			<dd>
+			All of the values are non-empty. <br/>
+			Most of the names look normal. <br/>
+			However, there are several names with strange characters, e.g., 
+			“H么tel Auberge Montréal Espace Confort”, “L'am猫re 脌 Boire”, 
+			“Crémy P芒tisserie”. We believe these names use special characters that include diacritics, 
+			and were inaccurately decoded during the data collection and processing procedure. <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Business’s Neighborhood’s Name</b></li>
+			<dd>
+			There are many rows with missing values with respect to this attibute.<br/>
+			Besides that, there are several names with strange characters, such as “Notre-Dame-de-Gr芒ce”. 
+			We believe this can also be attibuted to inaccurate decoding.
+			 <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Business’s Address</b></li>
+			<dd>
+			There are many rows with missing values with respect to this attibute.<br/>
+			Another issue is that there are also strange characters in some rows.
+			 <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Business’s City</b></li>
+			<dd>
+			All of the values are non-empty.<br/>
+			Some of the values have inaccurate decoding problem.
+			 <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Business’s State</b></li>
+			<dd>
+			All of the values are valid.<br/>
+			</dd>
+			<br/>
+			
+			<li><b>Business’s Postal Code</b></li>
+			<dd>
+			There are some rows with missing values with respect to this attibute.<br/>
+			The remaining parts are valid.<br/> 
+			It should be noted that the file contains both US and Canada Postal Code. <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Business’s Latitude and Longitude</b></li>
+			<dd>
+			There are some rows with missing values with respect to this attibute.<br/>
+			The remaining parts are valid, which have been verified with the aid of Google Map.<br/> 
+		
+			</dd>
+			<br/>
+			
+			<li><b>Business’s Stars</b></li>
+			<dd>
+			The following chart demonstrates the distribution of different values for stars.  <br/>
+			The X-axis is the stars.  <br/>
+			The Y-axis is the number of rows that take a particular value. <br/><br/>
+			
+			<center>
+			
+			<iframe style="border:1px solid black;" width="1000" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col0%2C+col1+from+1ApzsNfzTP-O-ni3WD7xwJdO4GZSm7IFlPJD3WyHA+order+by+col0+asc+limit+10&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_vAxes=%5B%7B%22title%22%3A%22Number%22%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23222%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Atrue%2C+%22bold%22%3Atrue%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_useFirstColumnAsDomain=true&amp;gco_legacyScatterChartLabels=true&amp;gco_isStacked=false&amp;gco_booleanRole=certainty&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Stars%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23222%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Atrue%2C+%22bold%22%3Atrue%7D%2C+%22gridlines%22%3A%7B%22count%22%3A%225%22%7D%2C+%22minorGridlines%22%3A%7B%22count%22%3A%221%22%7D%7D&amp;gco_legend=none&amp;gco_title=Stars+Distribution&amp;gco_titleTextStyle=%7B%22color%22%3A%22%23000%22%2C+%22fontSize%22%3A%2220%22%2C+%22bold%22%3Atrue%7D&amp;width=1000&amp;height=600"></iframe>
+			
+			</center>
+			From the chart, we can see that all the values are valid.		
+			
+			The values range from 1.0 to 5.0, with a stride of 0.5. <br/>
+	
+			</dd>
+			<br/>
+			
+			<li><b>Business’s Number of Reviews</b></li>
+			<dd>
+			All of the values are valid, namely non-negative.<br/>
+		
+			</dd>
+			<br/>
+			
+			<li><b>Business's status (Open or Closed)</b></li>
+			<dd>
+			All of the values are valid.<br/>
+			The value can take 0, meaning the business is closed, or 1, meaning the business is open. <br/>
+	
+			</dd>
+			<br/>
+			
+			<li><b>Business's Attributes</b></li>
+			<dd>
+			There are some rows with missing values with respect to this attibute.<br/>
+			For those rows with values, they are all valid. <br/>
+			However, the format for different rows varies. For instance, 
+			some businesses clearly state whether they provide bike parking or not, and the rest
+			of them do not say anything about bike parking. Some businesses say they accept credit 
+			cards or not, and the rest of them say nothing about credit cards. What do they mean if
+			they do not say it? It means they do not provide such service, or they fail to report?
+			This is not clear.<br/>
+			Therefore, this attribute is somewhat incoherent. <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Business's Categories</b></li>
+			<dd>
+			There are some rows with missing values with respect to this attibute.<br/>
+			The remaining parts are valid.<br/>
+			
+			</dd>
+			<br/>
+			
+			<li><b>Business's Working Hours</b></li>
+			<dd>
+			There are some rows with missing values with respect to this attibute.<br/>
+			The remaining parts are valid.<br/>
+			
+			</dd>
+			<br/>
+			</ul>
+			</p>
+			
+			<h2>Quality of the Dataset</h2>
+			<p>
+			<ul>
+			
+			<li><b>Is the Data Complete?</b></li>
+			<dd>
+			No, the data are not complete. <br/>
+			From the aforementioned analysis, we know that there are missing values in many fields, such as business ID. 
+			The concern raised from this phenomenon is that we cannot verify the identity of the business, 
+            therefore, these rows may have to be discarded, which may introduce bias.<br/>
+			</dd>
+			<br/>
+			
+			<li><b>Is the Data Coherent?</b></li>
+			<dd>
+			No, the data are not coherent. <br/>
+			From the aforementioned analysis, we know that there are inaccurately decoded values in name, neighborhood, address and city. Moreover, the format for attributes is not coherent. <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Is the Data Correct?</b></li>
+			<dd>
+			Yes, the data are mostly correct. <br/>
+			A minor concern is that if we discard invalid rows, the dataset may become biased.<br/>
+			</dd>
+			<br/>
+			</ul>
+			</p>
+			
 		</div>
-
-		<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="0.8s">
-			<h1>Donec eu porta 2</h1>
-			<p>Duis id ultricies magna. Fusce placerat eu magna non euismod. Curabitur suscipit tristique massa, nec pretium tellus maximus nec. Pellentesque convallis viverra mauris quis sollicitudin. Praesent et libero in augue aliquam malesuada vitae ultricies neque. Donec rutrum diam sagittis diam viverra tincidunt.</p>
+		
+		<br/>
+		
+		<div class="wow fadeInUp col-md-15 col-sm-15" data-wow-delay="0.9s">
+			<h1>Analysis on User Dataset</h1>
+			<h2>Components of the Dataset</h2>
+			<p>
+			The dataset is named “yelp_academic_dataset_user.json”, which contains the following information:
+			<ul>
+			<li> user id </li>
+			<li> user's name </li>
+			<li> the number of reviews a user has written </li>
+			<li> when the user joined Yelp </li>
+			<li> user's friends </li>
+			<li> number of useful votes sent by the user </li>
+			<li> number of funny votes sent by the user </li>
+			<li> number of cool votes sent by the user </li>
+			<li> number of fans the user has </li>
+			<li> the years the user was elite </li>
+			<li> average rating of all the user's reviews </li>
+			<li> number of hot compliments received by the user </li>
+			<li> number of more compliments received by the user </li>
+			<li> number of profile compliments received by the user </li>
+			<li> number of cute compliments received by the user </li>
+			<li> number of list compliments received by the user </li>
+			<li> number of note compliments received by the user </li>
+			<li> number of plain compliments received by the user </li>
+			<li> number of cool compliments received by the user </li>
+			<li> number of funny compliments received by the user </li>
+			<li> number of writer compliments received by the user </li>
+			<li> number of photo compliments received by the user </li>
+			
+			</ul>
+			</p>
+			<br/>
+			
+			<h2>Inspection on Components</h2>
+			<p>
+			
+			A similar inspection for user dataset was conducted, which shows that the quality of this dataset is much higher than the business dataset. Few concerns arised when we explored this dataset.
+			<br/>
+			Since this process is almost identical to what we did on business dataset, we omit the specific details for brevity. <br/>
+			
+			<br/>
+			
+			<h2>Quality of the Dataset</h2>
+			<p>
+			<ul>
+			
+			<li><b>Is the Data Complete?</b></li>
+			<dd>
+			Yes, it is coherent.
+			<br/>
+			</dd>
+			<br/>
+			
+			<li><b>Is the Data Coherent?</b></li>
+			<dd>
+			Yes, it is coherent.
+			 <br/>
+			</dd>
+			<br/>
+			
+			<li><b>Is the Data Correct?</b></li>
+			<dd>
+			Yes, it is correct.
+			<br/>
+			</dd>
+			<br/>
+			</ul>
+			</p>
+			
 		</div>
+		
+		<br/>
 
-		<div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.2s">
-			<h1>Donec eu porta 3</h1>
-			<p>Duis id ultricies magna. Fusce placerat eu magna non euismod. Curabitur suscipit tristique massa, nec pretium tellus maximus nec. Pellentesque convallis viverra mauris quis sollicitudin. Praesent et libero in augue aliquam malesuada vitae ultricies neque. Donec rutrum diam sagittis diam viverra tincidunt.</p>
+		<div class="wow fadeInUp col-md-15 col-sm-15" data-wow-delay="0.9s">
+			<h1>Potential Research Questions</h1>
+			<h2>Location for Restaurants</h2>
+			<p>
+			This question is expected to be answered with the user dataset. <br/>
+			There are many different types of restaurants in differnt places. We would like to know what is the best place
+			to run a restaurant, and what type of restaurant is most likely to be popular in a certain region.<br/>
+			Probability theory and estimation theory are expected to be the foundation of our analysis. <br/>
+			
+			</p>
+			<br/>
+
+			<h2>Elite Users</h2>
+			<p>
+			This question is expected to be answered with the user dataset. <br/>
+			Some of the users are quite popular on Yelp. They received many comments and stars for their valuable and useful reviews on foods, shops or fashions. These users are defined as Elites. <br/>
+			We would like to know how many types of Elite users are there, and how we can classify them reasonably. <br/>
+			Statistical methods, such as Gaussian Mixture Model may be adopted to achieve our goal. <br/>
+			</p>
 		</div>
-
-		<div class="clearfix"></div>
-
-		<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="1.4s">
-			<h1>Donec eu porta 4</h1>
-			<p>Morbi mattis scelerisque nunc quis faucibus. Cras consectetur, nulla nec condimentum bibendum, est est accumsan ipsum, id vestibulum nulla odio vel massa. Duis pharetra augue ac bibendum eleifend. Curabitur id luctus lectus. Donec sem sem, egestas sit amet sagittis pellentesque, semper non libero.</p>
-		</div>
-
-		<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="1.6s">
-			<h1>Donec eu porta 5</h1>
-			<p>Morbi mattis scelerisque nunc quis faucibus. Cras consectetur, nulla nec condimentum bibendum, est est accumsan ipsum, id vestibulum nulla odio vel massa. Duis pharetra augue ac bibendum eleifend. Curabitur id luctus lectus. Donec sem sem, egestas sit amet sagittis pellentesque, semper non libero.</p>
-		</div>
-
       </div>
    </div>
 </section>
@@ -176,14 +461,13 @@ http://www.tooplate.com/view/2082-pure-mix
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12">
-				<p class="wow fadeInUp"  data-wow-delay="0.3s">Copyright © 2016 Your Company Name - Designed by Tooplate</p>
-				<ul class="social-icon wow fadeInUp"  data-wow-delay="0.6s">
-					<li><a href="#" class="fa fa-facebook"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-behance"></a></li>
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-				</ul>
+				<p> <font color = "white"> 
+				This is a course project for the course “Interactive Data Science” at Carnegie Mellon University. <br/>
+				Thank you very much for reading.  <br/><br/>
+				Designed by Yuwei Qiu, Chengze Fan, Minghua Deng, Bryan Chang.<br/>
+				November, 2018. <br/>
+				
+				</font> </p>
 			</div>
 			
 		</div>
