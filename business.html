@@ -145,8 +145,8 @@ Runtime.load(notebook, Inspector.into(document.body));
                         <div class="post-format">
                                 
                            </div>
-													 <p>Unlike what we throught before, it is actually not easy to find the restaurant that you like by categories on Yelp. Because the hierarchy of categories on Yelp
-													 are extremly messy, for example "Chinese, restaurant"/"restaurant, Chinese"/"Chinese, Food" are considered different categories. Even worse, As shown in the treemaps below, an extremly large number of categories appears only once, and even the largest categories has only a few hundred samples, which is obviously
+													 <p>Unlike what we throught before, it is actually not easy to find the restaurant that you like by categories on Yelp. Because the <b>hierarchy of categories on Yelp
+														 are extremly messy</b>, for example "Chinese, restaurant"/"restaurant, Chinese"/"Chinese, Food" are considered different categories. Even worse, As shown in the treemaps below, an extremly large number of categories appears only once, and even the largest categories has only a few hundred samples, which is obviously
 													 no meaningful result can be derived from. (That could also be that reason why you always cannot find your favourite food using Yelp's category search : p) </p>
 													 
                <blockquote>categories of samples in Yelp datasets</blockquote>
@@ -154,27 +154,29 @@ Runtime.load(notebook, Inspector.into(document.body));
 
                   <br><br>
 
-									<p> To make the category data useful for our analysis, we breaks the original hierarchy of the category labels into unordered tags. For example,
+									<p> To make the category data useful for our analysis, we <b>breaks the original hierarchy of the category labels into unordered tags</b> For example,
 									"Mexican, Southern America Fusion, Restaurant" are broken into tags "Mexicon", "Sourthern America Fusion", and "Restaurant", which helps identify the
 									characteristic of these restaurants." <p>
 									<blockquote>Word Cloud of Tags in Yelp dataset</blockquote>
 									<img src="images/tag_word_cloud.png", class="img-responsive", alt="Word Cloud">
 									<br><br>
-               <h1>When people use Yelp and why: vacations and for making friends.</h1>
+               <h1>Train rate prediction models with tags</h1>
                         <div class="post-format">
                                 
                            </div>
-
-                <blockquote>Photos and reviews from Yelp.</blockquote>
-              
-                <img src="images/user1.jpg" class="img-responsive" alt="Single Project">
+								<p> Then we train a rate prediction models with tags we acquired from previous steps.<p>
+								<img src="images/predictive_model.jpg", class="img-responsive", alt="predictive model">
+								<p> Here we use <b>gradient boosting regression Trees model</b>, and we pick this model for two reason:<p>
+								<p> First, it is <b>simple but robust</b>, as our purpose here is to <b>find important tags for high rate restaurant</b> rather than <b>to actually build up an
+									accurate rate prediction model</b>, it is good to keep simple. </p>
+								<p> Second, it is <b>understandable</b>, unlike other complicated model such as neural network, GBRT is tree based regression model, which is intutive and easy for analysis<p>
+								<br><br>
+								<blockquote> Validation loss of the data </blockquote> 
+                <img src="images/loss_plot.jpg" class="img-responsive" alt="Single Project">
 
                 <br>
                 <br>
-               <p>There are several interesing statistical facts that we can take into considerations:</p>
-               <p>First, the usage of yelp among new users is increasing according time since its birth of 2004 almost exponentially. From the statistics, we could almost make an assumption that because of the rich communities of locals in big cities, Yelp has evolved as a Web site, as well as a popular mobile application the way that Wikipedia has in the encyclopedia space.</p>
-               <p>Second, there are local maximum in new users sign-ups. Also, the trends of new reviews and new relationships are quite similar.
-                <br>To figure out the patterns and the relations between the time periods and new reviews, we draw the following chart. </p>
+								<p> From the validation loss we can see that the model did learn something from tags, which is good enough for us to tell the difference of the importance of these tags. </p>
 
 
               <blockquote>This is a figure showing the when people write reviews in Yelp.</blockquote>
