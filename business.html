@@ -218,8 +218,7 @@
 
                     <p>
                         To find the correlation between the location and ratings of a business, I mapped the average
-                        stars
-                        along with the <em>per captita income</em> of that zip code.
+                        stars along with the <b>per captita income</b> of that zip code.
                     </p>
                     <p>
                         If we change the filter of AVG. stars from less to more slowly, we can clearly see that lower
@@ -264,16 +263,27 @@
                         area down.
                     </p>
 
+                    <h2>
+                        Suggestion 2: How many business around does not matter.
+                    </h2>
+                    <iframe width="600" height="371" seamless frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-JF3GL3eSK0PKEjo_KHIWCSV2sgsvy747KyleJfJf-gW0ApTi4VA0NzgFfXHA0yEX4V9HidpzMwGQ/pubchart?oid=444769571&amp;format=interactive"></iframe>
+
+                    <p>
+                        To further decide whether we start our business in the busy neighborhood, we defined how many
+                        business appear in the rounded GPS location. We plotted the chart above. From that, we can see
+                        no obvious trending.
+                    </p>
+
                     <!--Second Section: What should you provide-->
                     <h1>Tags of Restaurants on Yelp</h1>
                     <div class="post-format">
 
                     </div>
-                    <p>Unlike what we throught before, it is actually not easy to find the restaurant that you like by
+                    <p>Unlike what we thought before, it is actually not easy to find the restaurant that you like by
                         categories on Yelp. Because the <b>hierarchy of categories on Yelp
-                            are extremly messy</b>, for example "Chinese, restaurant"/"restaurant, Chinese"/"Chinese,
+                            are extremely messy</b>, for example "Chinese, restaurant"/"restaurant, Chinese"/"Chinese,
                         Food" are considered different categories. Even worse, As shown in the treemaps below, an
-                        extremly large number of categories appears only once, and even the largest categories has only
+                        extremely large number of categories appears only once, and even the largest categories has only
                         a few hundred samples, which is obviously
                         no meaningful result can be derived from. (That could also be that reason why you always cannot
                         find your favourite food using Yelp's category search : p) </p>
@@ -386,17 +396,17 @@
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
-                    <p> Notice that this figure only shows <b>the importances of a tag to the star of a restaurant</b>,
+                    <p> Notice that this figure only shows <b>the importance of a tag to the star of a restaurant</b>,
                         but not <b>correlation</b>, for example,
                         tag <b>fast food</b> has very significant importance, it means <b>knowing fast food is important
-                            for predicting the star</b> but it does not nesscessarily means that <b>fast food has strong
+                            for predicting the star</b> but it does not necessarily means that <b>fast food has strong
                             linear-relationship with
                             the star</b>. And generaly speaking it is hard to tell the relationship as tags may not be
                         independent to each other. However, by calculating the average star of restaurant with/without
                         the tag, we can have a
                         intutive guess about how tags affect the star of restaurants.
                     <p>
-                    <blockquote> This is the figure showing an <b>intutive relationship</b> between tags and stars of
+                    <blockquote> This is the figure showing an <b>intuitive relationship</b> between tags and stars of
                         restaurants
                     </blockquote>
                     <div class='tableauPlaceholder' id='viz1543730465544' style='position: relative'>
